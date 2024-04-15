@@ -1,0 +1,13 @@
+header {
+    width:100%;
+    margin: -10px 0px 0px -10px; 
+    padding-left: 5px; 
+    display: grid; 
+    grid-template-areas: 
+        "title     nav"; 
+}
+
+h1 {
+    font-size: 30px;
+    grid-area: title;
+}
