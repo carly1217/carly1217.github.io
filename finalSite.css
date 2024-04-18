@@ -1,13 +1,67 @@
 header {
     width:100%;
+    padding-left: 5mm; 
     margin: -10px 0px 0px -10px; 
-    padding-left: 5px; 
     display: grid; 
     grid-template-areas: 
-        "title     nav"; 
+        "title  nav"; 
+    background-color: rgb(162, 156, 156);
+
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 2.75em;
     grid-area: title;
+    color:rgb(81, 7, 7)
+}
+
+nav {
+    grid-area: nav;
+    text-align: right;
+    padding-top:8mm;
+    padding-right:5mm;
+
+}
+
+nav ul li {
+    text-align: center;
+    display: inline;
+    font-size: 1.5em;
+    padding-left: 3mm;
+
+}
+
+nav ul li a:hover {
+    background-color: rgb(81, 7, 7);
+    border-top: 5px solid rgb(81, 7, 7);
+    border-bottom: 5px solid rgb(81, 7, 7);
+    border-left: 5px solid rgb(81, 7, 7);
+    border-right: 5px solid rgb(81, 7, 7);
+    color:antiquewhite;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.body {
+    height: 25cm;
+    width: 70%;
+    background-color: rgb(219, 216, 216);
+    margin: auto;
+    
+
+}
+
+h2 {
+    text-align: center;
+    padding-top: 1cm;
+    font-size: 2em;
+}
+
+.info {
+    padding-left: 1.3cm;
+    padding-right: 1.3cm;
+    font-size: 1.2em;
 }

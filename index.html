@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>Introduction to Cryptography</title>
+    <link rel="stylesheet" href="finalSite.css"/>
 </head>
 
 <body>
+<header>
+<h1>What is Cryptography?</h1>
+<nav class='menu'>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="RSAinfo.html">RSA Algorithm</a></li>
+    </ul>
+</nav> 
+</header>
 
-<h1>Hello World</h1>
-<p>Hello!</p>
+<div class="body">
+<h2>Introduction to Cryptography</h2>
+<p class="info">Cryptography is a method of securing communication to prevent third parties 
+    from being able to discern the meaning. To make messages secure, algorithms are created 
+that are meant to encode a message. Then, for the message to be decoded, an algorithm will have a
+ process which will decode it to get back to the original message.
+<br>
+<br>
+ There are multiple types of cryptography, two of which being Asymmetric key and Symmetric key.
+ Asymmetric key cryptography is often called public key cryptography which is done using two keys. 
+ In this case, a person would have two keys which are related to one another: a public key which 
+ can be accessed by anyone wishing to send them a message, and a private key that only the person knows.
+ The public key is specific to the recipient and is used by the sender to encrypt the message.
+ When the encrypted message is recieved, the recipient can use their private key 
+ (which is related to the public key) to decrypt the message.
+<br><br>
+A common algorithm for asymmetric key is the <a href="RSAinfo.html">RSA algorithm</a>, which uses prime numbers, 
+ideally very large prime numbers for the strongest encryption. This will involve the 
+use of modular division as well. 
+</p>
+</div>
+
 </body>
 </html>
