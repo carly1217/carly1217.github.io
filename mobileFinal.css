@@ -135,6 +135,14 @@ h2 {
 
 }
 
+.body2 {
+    height: 38cm;
+    width: 95%;
+    background-color: rgb(219, 216, 216);
+    margin: auto;
+
+}
+
 .info {
     padding-left: .5cm;
     padding-right: .5cm;
