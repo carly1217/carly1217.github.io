@@ -3,25 +3,46 @@
 <head>
     <title>Introduction to Cryptography</title>
     <link rel="stylesheet" href="finalSite.css"/>
+    <link rel="stylesheet" type="text/css" href="mobileFinal.css" media="screen and (max-width:480px)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
+
+
 <body>
+<h1 class="main">Cryptography</h1>
+
+
 <header>
 <h1>What is Cryptography?</h1>
+<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+      <label class="menu-burger" for="menu-chkbx">
+        <span class="hamburger"></span>
+      </label>
 <nav class='menu'>
     <ul>
     <li><a href="index.html">Home</a></li>
+    <li class="noDisplay">&middot;</li>
     <li><a href="RSAinfo.html">RSA Algorithm</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="HILLinfo.html">Hill Cipher</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="calc.html">RSA Algorithm Calculator</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="math.html">Math Concepts</a></li>
     </ul>
 </nav> 
 </header>
 
-<div class="body">
+<div class="body1">
 <h2>Introduction to Cryptography</h2>
-<p class="info">Cryptography is a method of securing communication to prevent third parties 
+<p class="info">
+    <img class="comp" src="images/pexels-anete-lusina-5240548.jpg">
+    Cryptography is a method of securing communication to prevent third parties 
     from being able to discern the meaning. To make messages secure, algorithms are created 
 that are meant to encode a message. Then, for the message to be decoded, an algorithm will have a
  process which will decode it to get back to the original message.
+ 
 <br>
 <br>
  There are multiple types of cryptography, two of which being Asymmetric key and Symmetric key.
@@ -32,10 +53,35 @@ that are meant to encode a message. Then, for the message to be decoded, an algo
  When the encrypted message is recieved, the recipient can use their private key 
  (which is related to the public key) to decrypt the message.
 <br><br>
-A common algorithm for asymmetric key is the <a href="RSAinfo.html">RSA algorithm</a>, which uses prime numbers, 
+A common algorithm for asymmetric key is the RSA algorithm which uses prime numbers, 
 ideally very large prime numbers for the strongest encryption. This will involve the 
-use of modular division as well. 
+use of modular arithmetic as well. 
+
+<br><br> 
+Symmetric key cryptography uses one key to both encrypt and decrypt messages. The best way to ensure security in symmetric 
+key systems is to protect the secrecy of the key itself. This is the most obvious drawback of this type of system.
+The most common example of a symmetric key system is a substitution cipher. 
+<br><br>
+The Hill Cipher is an example of a symmetric key algorithm, and it uses matix multiplication and inverse matrices to encrypt
+ and decrypt a message. 
+<br><br>
+
+When using any sort of algorithm to encrypt a message, the letters must be changed into a numerical value. This has to have a 
+defined method making so that a standard system can be used. For example, the letters corresponding number in the alphabet could be used,
+ but there are also some times where more characters are needed or space values as well. The examples on the RSA Algorithm and Hill Cipher 
+pages use the alphabet values. The ASCII table is another method that is perhaps more standard since it has characters and the values already
+ defined, so the binary or hexadecimal numbers could be used. Below is the ASCII chart, giving characters, letters, and numbers and their values.
+
 </p>
+
+<img class="chart" src="images/USASCII_code_chart.png" alt="ASCII table">
+</div>
+
+<br>
+
+<div class="footer">
+    Created by Carly Hinkhaus and copyright &copy thereof. <br/>
+    Last Updated April 21, 2024.
 </div>
 
 </body>

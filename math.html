@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Concepts</title>
+    <link rel="stylesheet" href="finalSite.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="mobileFinal.css" media="screen and (max-width:480px)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+
+<body>
+<h1 class="main">Cryptography</h1>
+
+
+<header>
+<h1>Math Concepts</h1>
+<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+      <label class="menu-burger" for="menu-chkbx">
+        <span class="hamburger"></span>
+      </label>
+<nav class='menu'>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="RSAinfo.html">RSA Algorithm</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="HILLinfo.html">Hill Cipher</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="calc.html">RSA Algorithm Calculator</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="math.html">Math Concepts</a></li>
+    </ul>
+</nav> 
+</header>
+
+<div class="body1">
+<h2>Modular Arithmetic</h2>
+<p class="info">
+Modular arithmetic in this situation is essentially looking for the remainder when dividing by the modulus (the value n in (mod n)).
+<br><br> 
+For example, when looking at modulo 3, the remainder could be 0, 1, or 2. \(6 \pmod 3 = 0\), \(7 \pmod 3 = 1\), \(8 \pmod 3 = 2\).
+This can be done for larger numbers, most easily found using long division. To find \(31 \pmod 5\), first divide \(31 \div 5 = 6.2\). 
+Then, take the whole number value, and multiply it by the modulo: \(5 \cdot 6 = 30\), then \(31-30=1\), which then gives the answer for
+\(31 \pmod 5 = 1\).
+<br><br> 
+For more information about this, visit <a class=link href="https://libraryguides.centennialcollege.ca/c.php?g=717548&p=5121821">Modular Numbers and Cryptography</a>
+ for a detailed explaination by Matthew Cheung (Oct 21, 2021).
+
+</p>
+
+<h2>Matrix Multiplication</h2>
+<p class="info">
+For matrix multiplication, the product must be computed using the row-column rule. Lets look at \(A \times B\), where: 
+<br><br>
+\(A = \begin{bmatrix}
+      
+a_1& a_2 \\
+a_3& a_4 \\ 
+
+\end{bmatrix}\)
+ 
+and 
+
+\(B = \begin{bmatrix}
+      
+b_1& b_2 \\
+b_3& b_4 \\ 
+
+\end{bmatrix}\). 
+<br><br>
+Then \(A \times B\) 
+\(= \begin{bmatrix}
+      
+a_1b_1 + a_2b_3 & a_1b_2 + a_2b_4 \\
+a_3b_1 + a_4b_3 & a_3b_2 + a_4b_4\\ 
+
+\end{bmatrix}\)
+
+<br><br>
+In order for two matrices to be mutliplied, the dimentions \(n \times m\)  and \(m \times q\), m must be the same. 
+The inside dimentions must match, so matrices in the order \((m \times q)\times(n \times m)\) can only be multiplied if 
+\(q = n\). See the image below for more. 
+
+<figure>
+    <img class="chart" src="images/matrixMult.png" alt="Matrix multiplication diagram.">
+    <figcaption style="text-align: center;"><a class="link" href="https://commons.wikimedia.org/wiki/File:Matrix_multiplication_qtl1.svg">Quartl</a>, 
+        <a href="https://creativecommons.org/licenses/by-sa/3.0" class="link">CC BY-SA 3.0</a>, via Wikimedia Commons</figcaption>
+</figure>
+
+<br><br> 
+
+<br><br> 
+
+</p>
+
+</div>
+
+<br>
+
+<div class="footer">
+    Created by Carly Hinkhaus and copyright &copy thereof. <br/>
+    Last Updated April 21, 2024.
+</div>
+
+</body>
+</html>

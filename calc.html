@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algorithm Calculator</title>
+    <script src="calc.js"></script>
+    <link rel="stylesheet" href="finalSite.css"/>
+    <link rel="stylesheet" type="text/css" href="mobileFinal.css" media="screen and (max-width:480px)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<h1 class="main">Cryptography</h1>
+<header>
+    <h1>RSA Algorithm Calculator</h1>
+    <input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+      <label class="menu-burger" for="menu-chkbx">
+        <span class="hamburger"></span>
+      </label>
+<nav class='menu'>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="RSAinfo.html">RSA Algorithm</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="HILLinfo.html">Hill Cipher</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="calc.html">RSA Algorithm Calculator</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="math.html">Math Concepts</a></li>
+    </ul>
+    </nav> 
+</header>
+
+<div class="row">
+        <div class="column1">
+        
+<form>
+    <h2>Generate Keys</h2>
+    <hr>
+    <h3>Choose 2 prime numbers for p and q:</h3>
+    <p>p <INPUT TYPE="text" NAME="p" VALUE="" SIZE=15> </p>
+    <p>q <INPUT TYPE="text" NAME="q" VALUE="" SIZE=15></p>
+
+    <INPUT TYPE="button" NAME="pqNr" VALUE="Set p, q" onclick="calculateNr(this.form)">
+
+    <h3>Calculate N: (p*q):</h3>
+    <p id="N_value"></p>
+    <h3>Calculate r: (p-1)*(q-1):</h3>
+    <p id="r_value"></p>
+    <h3>Candidates for k, where k (mod r) = 1:</h3>
+    <p id="ed_value"></p>
+
+    <P>Choose a value for k: <INPUT TYPE="text" NAME="k" VALUE="" SIZE=15> </p>
+       <p>Now click "Factor k" to factor it. If k is prime (where the only factor appearing is k), choose a new k from the candidates.</p>
+        <INPUT TYPE="button" NAME="ed2" VALUE="Factor K" onclick="CalculateED(this.form)">
+
+        <p>Factors of k:</p>
+        <p id="k_factors"></p>
+
+            <p>Enter values for e and d made up of the factors of k, then hit "Consistency Check". If e and d work, the confimation message 
+            "e*d mod r = 1, e and r are relatively prime, d and r are relatively prime" will appear and the completed keys will appear as well.</p>
+            <p>e <INPUT TYPE="text" NAME="e" VALUE="" SIZE=15></p>
+            <p>d <INPUT TYPE="text" NAME="d" VALUE="" SIZE=15></p>
+            <p>Consistency check: </p>
+            <p id="check"></p>
+
+            <INPUT TYPE="button" NAME="ed3" VALUE="Check e & d" onclick="CheckED(this.form)">
+
+            <h3>Completed Keys</h3>
+            <p id="public"></p>
+            <p id="private"></p>
+
+</form>
+</div>
+
+<div class="column2">
+     
+<h2>Encryption/Decryption</h2>
+<hr>
+<form>
+
+<h3>Encryption:</h3>
+<p>Message (input numbers which correspond to the letters, a=1, b=2, ...): <INPUT TYPE="text" NAME="m" VALUE="" SIZE=15></p>
+<p>e <INPUT TYPE="text" NAME="e1" VALUE="" SIZE=15></p>
+<p>N <INPUT TYPE="text" NAME="N" VALUE="" SIZE=15></p>
+<INPUT TYPE="button" VALUE="Encrypt Message" onclick="encrypt(this.form)">
+<p id="encrypted"></p>
+
+<h3>Decryption:</h3>
+<p>Encrypted Message: <INPUT TYPE="text" NAME="eM" VALUE="" SIZE=15></p>
+<p>d <INPUT TYPE="text" NAME="d1" VALUE="" SIZE=15></p>
+<p>N <INPUT TYPE="text" NAME="N1" VALUE="" SIZE=15></p>
+<INPUT TYPE="button" VALUE="Decrypt Message" onclick="decrypt(this.form)">
+<p id="decrypted"></p>
+
+</form>
+</div>
+</div>
+
+<br>
+
+<div class="footer">
+    Created by Carly Hinkhaus and copyright &copy thereof. <br/>
+    Last Updated April 21, 2024.
+</div>
+
+
+</body>
+</html>

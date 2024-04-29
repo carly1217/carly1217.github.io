@@ -1,0 +1,38 @@
+.row {
+    display: flex;
+}
+  
+.column1 {
+    flex: 50%;
+    padding: 1cm;
+    padding-top:.5cm;
+}
+.column2 {
+    flex: 50%;
+    padding: 1cm;
+    padding-top:.5cm;
+}
+
+
+.footer {
+    text-align: center;
+}
+
+p {
+    text-indent: .7cm;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+
+.header {
+    background-color: rgb(162, 156, 156);
+    padding-bottom:.5cm;
+    padding-top:.3cm;
+    color: rgb(81, 7, 7);
+
+}

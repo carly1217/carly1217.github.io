@@ -1,7 +1,7 @@
 header {
     width:100%;
     padding-left: 5mm; 
-    margin: -10px 0px 0px -10px; 
+    margin: -10px -10px -10px -10px; 
     display: grid; 
     grid-template-areas: 
         "title  nav"; 
@@ -9,13 +9,25 @@ header {
 
 }
 
+@media print, screen and (min-width: 480px) {
+	.menu-burger, .menu-chkbx, .hamburger {
+	display:none;
+	}
+}
+
+.main {
+    font-size: 3em;
+    color: black;
+    text-align: center;
+}
+
 h1 {
     font-size: 2.75em;
     grid-area: title;
-    color:rgb(81, 7, 7)
+    color:rgb(81, 7, 7);
 }
 
-nav {
+.menu {
     grid-area: nav;
     text-align: right;
     padding-top:8mm;
@@ -27,7 +39,7 @@ nav ul li {
     text-align: center;
     display: inline;
     font-size: 1.5em;
-    padding-left: 3mm;
+    padding-left: 1mm;
 
 }
 
@@ -45,12 +57,19 @@ a {
     text-decoration: none;
 }
 
-.body {
-    height: 25cm;
+.body1 {
+    height: 35cm;
     width: 70%;
     background-color: rgb(219, 216, 216);
     margin: auto;
-    
+
+}
+
+.body2 {
+    height: 38cm;
+    width: 70%;
+    background-color: rgb(219, 216, 216);
+    margin: auto;
 
 }
 
@@ -64,4 +83,77 @@ h2 {
     padding-left: 1.3cm;
     padding-right: 1.3cm;
     font-size: 1.2em;
+}
+
+.steps {
+    padding-left: 2.2cm;
+    padding-right: 2.2cm;
+    font-size: 1.2em;
+}
+
+.example {
+    padding-left: 1.3cm;
+    padding-right: 1.3cm;
+    font-size: 1em;
+    color:rgb(97, 4, 4);
+}
+
+/* Specific for RSA calc page*/
+
+.row {
+    display: flex;
+}
+  
+.column1 {
+    flex: 50%;
+    padding: 1cm;
+    padding-top:.5cm;
+}
+.column2 {
+    flex: 50%;
+    padding: 1cm;
+    padding-top:.5cm;
+}
+
+
+.footer {
+    text-align: center;
+}
+
+p {
+    text-indent: .7cm;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+
+.header {
+    background-color: rgb(162, 156, 156);
+    padding-bottom:.5cm;
+    padding-top:.3cm;
+    color: rgb(81, 7, 7);
+
+}
+
+.chart {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.comp {
+    width: 25%;
+    float: right;
+    margin: 0px 0px 15px 20px;
+}
+
+.link {
+    text-decoration: underline;
+    color:rgb(97, 4, 4);
 }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hill Cipher</title>
+    <link rel="stylesheet" href="finalSite.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="mobileFinal.css" media="screen and (max-width:480px)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<h1 class="main">Cryptography</h1>
+<header>
+<h1>Hill Cipher</h1>
+<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+      <label class="menu-burger" for="menu-chkbx">
+        <span class="hamburger"></span>
+      </label>
+<nav class='menu'>
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="RSAinfo.html">RSA Algorithm</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="HILLinfo.html">Hill Cipher</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="calc.html">RSA Algorithm Calculator</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="math.html">Math Concepts</a></li>
+    </ul>
+</nav> 
+</header>
+
+<div class="body2">
+<h2>How the Hill Cipher Works</h2>
+<p class="info"> 
+
+    First in the Hill Cipher, a square, invertible matrix must be determined (this ideally would be randomized). Let's say there is a matrix 
+    A which is \(nxn\) and the message wishing to be encrypted is then a matrix M which is \(nx1\). For this M matrix, the values need to correspond 
+    to the letters in the message, rather by the corresponding number in the alphabet, ASCII values, or some other method. The message can be split up 
+    into pieces n letters long.
+
+    <br><br> To determine the encrypted message, use matrix multiplication to multiply \(A \cdot M\). Then, take that result, \(AM \pmod{v}\), where v is  
+    however many numerical values there are which correspond to a letter (so 26, assuming only letters are being encrypted).
+
+    <br><br> To decrypt the message, use the inverse of the matix A in mod 26, and multiply \(A^{-1} \cdot E\) where E is the encrypted message. Then, take  
+    \(A^{-1}E\pmod{v}\) where v is the same as in the encryption step.
+
+    <br><br>
+    For the sake of this example, a hill cipher that employs a 3x3 matrix will be discussed. The matrix can be any size,  
+    but it must always be square. This is an example using a randomized matrix from our code:
+  
+    
+    \begin{bmatrix}
+      
+         23& 4& 15 \\
+        7& 0& 10 \\ 
+        17& 25& 11 \\ 
+
+
+    \end{bmatrix}
+  
+
+    In this basic scheme, each letter in the key is associated with a number in the matrix based off the letter of that 
+    alphabet at that position (A is associated with 0, B with 1, C with 2, etc). In reality, the number associated with each number 
+    can be randomized. This matrix represents the key: XEPHAKRZL. 
+
+    The message we are trying to encode will be split into groups of 3 characters, since there are 3 columns in the matrix. Let "XYZ"
+     be the first three characters of the theoretical message. This coincides to the numbers 23, 24, and 25. Use these to form a vector. 
+    This answer is then converted to modulo 26. This is necessary to be able to associate each resulting number to a number in the alphabet, 
+    since there are 26 letters.
+    <br><br>
+\(
+    \begin{bmatrix}
+      
+    23& 4& 15 \\
+    7& 0& 10 \\ 
+    17& 25& 11 \\ 
+
+\end{bmatrix}
+*
+\begin{bmatrix}
+    23\\
+    24\\
+    25\\
+\end{bmatrix} 
+=
+\begin{bmatrix}
+    1122\\
+    717\\
+    860\\
+\end{bmatrix}
+\pmod{26} =
+\begin{bmatrix}
+    4\\
+    15\\
+    2\\
+\end{bmatrix}
+\)
+
+<br><br>
+If we look at the letter associated with each of these numbers, the encrypted message is: EPC. To decrypt, multiply the vector 
+representation of the encrypted message by the inverse of the key in modulo 26. The calculated matrix will correspond to the original message, "XYZ."
+
+<br><br>
+
+\(
+\begin{bmatrix}
+  
+    23& 7& 17 \\
+    4& 0& 25 \\ 
+    15& 10& 11 \\ 
+
+
+\end{bmatrix} ^{-1} \pmod{26} 
+\begin{bmatrix}
+    4\\
+    15\\
+    2\\
+\end{bmatrix}
+\)<br><br>\(
+= 
+\begin{bmatrix}
+  
+    12& 5& 15 \\
+    15& 8& 13 \\ 
+    22& 19& 8 \\ 
+
+\end{bmatrix}
+ \begin{bmatrix}
+    4\\
+    15\\
+    12\\
+\end{bmatrix}
+
+=
+\begin{bmatrix}
+    153\\
+    206\\
+    389\\
+\end{bmatrix}
+\pmod{26} 
+
+=
+\begin{bmatrix}
+23\\
+24\\
+25\\
+\end{bmatrix}
+\)</p>
+</div>
+
+<br>
+
+<div class="footer">
+    Created by Carly Hinkhaus and copyright &copy thereof. <br/>
+    Last Updated April 21, 2024.
+</div>
+
+</body>
+</html>

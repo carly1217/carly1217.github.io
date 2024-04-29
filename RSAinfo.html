@@ -3,22 +3,87 @@
 <head>
     <title>RSA Algorithm</title>
     <link rel="stylesheet" href="finalSite.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" type="text/css" href="mobileFinal.css" media="screen and (max-width:480px)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
+<h1 class="main">Cryptography</h1>
 <header>
 <h1>RSA Algorithm</h1>
+<input class="menu-chkbx" type="checkbox" id="menu-chkbx" />
+      <label class="menu-burger" for="menu-chkbx">
+        <span class="hamburger"></span>
+      </label>
 <nav class='menu'>
     <ul>
     <li><a href="index.html">Home</a></li>
+    <li class="noDisplay">&middot;</li>
     <li><a href="RSAinfo.html">RSA Algorithm</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="HILLinfo.html">Hill Cipher</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="calc.html">RSA Algorithm Calculator</a></li>
+    <li class="noDisplay">&middot;</li>
+    <li><a href="math.html">Math Concepts</a></li>
     </ul>
 </nav> 
 </header>
 
-<div class="body">
+<div class="body2">
 <h2>How the RSA Algorithm Works</h2>
-<p class="info"></p>
+<p class="info">For RSA Algorithm, there needs to be 3 numbers created: n, e, and d. From these numbers, 
+    the Public key is (e, n) and Private key is (d, n). While n is the same for the Public and Private keys, 
+    d is practically impossible to derive from e, making the private key secure. Idealy for realistically secure keys, 
+    the prime numbers used would be very large, so that the n value is almost impossible to factor to find the p and q values 
+    used to get to the other values (e and d) used in the keys. <br><br>
+
+    Below, there are steps that walk through creating both the public and private keys, with a simple example that shows the process.
+    It also includes how to then use the keys to encrypt and decrypt a message.
+
+</p>
+    <ul class="steps">
+    <li><b>Step 1:</b> Choose p and q (both as prime numbers): 
+        <p class="example"> \(p=5, q=11\)</p>
+    </li> 
+   
+    <li><b>Step 2:</b>  Compute n, where \(n=p \cdot q\): 
+        <p class="example">\(n=5\cdot 11 = 55\) </p>
+    </li> 
+   
+    <li><b>Step 3:</b>  Compute \(r= (p-1)*(q-1)\): 
+        <p class="example">\(r = (5-1)\cdot (11-1) = 4\cdot 10=40\) </p>
+    </li> 
+    
+    <li><b>Step 4:</b>  Choose e where \( 1 < e < r \), with \(e\) and \(r\) are coprime (meaning \(gcd(e, r)=1\)): 
+        <p class="example">\(1 < e < 40\), if \( e = 7 \), \( gcd(7,40) = 1 \) </p>
+    </li> 
+   
+    <li><b>Step 5:</b>  Compute d where \( (d \cdot e) \pmod r = 1 \): 
+        <p class="example">\((d\cdot 7)\equiv 1 \pmod{40}\), one solution is \(d=23\), \(23\cdot 7 \pmod{40} = 1\) </p>
+    </li> 
+    </ul>
+
+    <p class="info">
+    Now: Values of e, d, and n have been determined, so Public key = (7, 55) and Private key = (23, 55).  <br><br>
+   
+    Using these keys, encrypt and decrypt message "HI". Convert the letters first to numbers (using their number in the alphabet) H = 8, I = 9. 
+    So message being encrypted will be represented as 89. Since 89 is larger than n (55), we have to split it into smaller pieces, so encrypt 8 and 9 separately.  <br><br>
+
+    <b>Formula for Encryption:</b> \(m^e \pmod{n}\), where m is the message. <br>
+    <b>Formula for Decryption:</b> \(c^d \pmod{n}\), where c is the encrypted message.<br><br>
+    
+    <b>Encryption:</b> \(m_1 = 8\): \(8^7 \pmod{55}= 2\), \(m_2 = 9\): \(9^7 \pmod{55}= 4\) <br>
+    <b>Decryption:</b> \(c_1 = 2\): \(2^{23} \pmod{55}=8\), \(c_2 = 4\): \(4^{23} \pmod{55}=9\)</p>
+</div>
+
+<br>
+
+<div class="footer">
+    Created by Carly Hinkhaus and copyright &copy thereof. <br/>
+    Last Updated April 21, 2024.
 </div>
 
 </body>
